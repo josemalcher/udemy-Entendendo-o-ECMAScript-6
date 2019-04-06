@@ -164,6 +164,35 @@ numeros.forEach(function(numero){
 
 #### 3. map
 
+O método map é muito útil quando precisamos não somente passar por todos os elementos de um Array , mas também modificá-los.
+
+```javascript
+var numeros = [1,2,3];
+var dobro = [];
+
+numeros.forEach(function (numero) {
+    dobro.push(numero * 2);
+});
+
+console.log(dobro);
+```
+
+```ecmascript 6
+var numeros = [1,2,3];
+
+var dobro = numeros.map(function (numero) {
+    return numero * 2;
+});
+
+console.log(dobro);
+console.log(numeros);
+
+```
+
+O map executa a função de callback recebida por parâmetro para cada elemento iterado de numeros e constrói um novo Array com base nos retornos de cada uma das chamadas. Como o map nos devolve uma outra instância de Array , a lista original nunca é realmente modificada, o que mantém sua integridade.
+
+
+
 #### 4. filter
 
 #### 5. find
