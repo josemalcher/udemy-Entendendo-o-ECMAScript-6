@@ -79,6 +79,7 @@ Site Oficial do Babel - https://babeljs.io/
 ## <a name="parte3">Métodos Auxiliares</a>
 
 
+
 [Voltar ao Índice](#indice)
 
 ---
