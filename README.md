@@ -100,6 +100,84 @@ Site Oficial do Babel - https://babeljs.io/
 
 O maior problema com esta abordagem é que é impossível saber qual o objetivo do corpo da iteração sem ver sua implementação.
 
+Os métodos auxiliares nos permite iterar um array de forma muito mais clara e simples. Neste capítulo, vimos 5 delas: forEach, map, filter, find, every, some e o reduce. Apesar de terem uma sintaxe muito parecida, cada um tem uma função bem específica. Abaixo, segue um exemplo de como utilizá-las:
+
+#### 2. forEach
+
+```ecmascript 6
+var nomes = ['maria', 'josé', 'luciana'];
+for(var i = 0; i < nomes.length ; i++){
+    console.log(nomes[i]);
+}
+
+console.log('------------------');
+
+nomes.forEach(function (nome) {
+   console.log(nome);
+});
+
+```
+
+Repare no que aconteceu. Dentro do forEach , passamos uma função anônima de retorno, que costumamos chamar de função de callback . Ela é executada para cada elemento dentro da lista. A cada iteração, o valor da lista é atribuído à variável passada como parâmetro no callback — no nosso caso, a variável nome.
+
+Entretanto, note que a função de callback não precisa necessariamente ser anônima. Podemos defini-la antes e atribuí-la a uma variável para passá-la como parâmetro ao forEach :
+
+```ecmascript 6
+var nomes = ['maria', 'josé', 'luciana'];
+function imprimeNome(nome){
+    console.log(nome);
+}
+nomes.forEach(imprimeNome);
+
+```
+
+Isso acontece exatamente porque os elementos processados pelo forEach são determinados antes da primeira invocação da função de callback . Entretanto, isso não quer dizer que os valores não foram adicionados à lista. Ao adicionar um segundo console.log ao final do código para exibir a lista, notamos que a RedeTV foi adicionada várias vezes ao nosso Array . Uma cópia para cada iteração:
+
+```ecmascript 6
+var canais = ['globo','sbt', 'record'];
+
+canais.forEach(function (canal) {
+    console.log(canal);
+    canais.push('REDE TV'); //este item será ignorado
+});
+console.log(canais);
+
+```
+
+Utilizamos para quando precisamos passar por todos os nossos itens de um Array. 
+
+Exemplo: exibir todos os seus itens no console.
+
+```ecmascript 6
+var numeros = [1,2,3,4,5];
+numeros.forEach(function(numero){
+    console.log(numero);
+});
+// saída
+// 1
+// 2
+// 3
+// 4
+// 5
+```
+
+
+#### 3. map
+
+#### 4. filter
+
+#### 5. find
+
+#### 6. every
+
+#### 7. some
+
+#### 8. reduce - parte 1
+
+#### 9. reduce - parte 2
+
+#### 10. Conclusão
+
 
 
 
