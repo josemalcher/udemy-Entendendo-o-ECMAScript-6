@@ -78,6 +78,30 @@ Site Oficial do Babel - https://babeljs.io/
 
 ## <a name="parte3">Métodos Auxiliares</a>
 
+### 1. O método tradicional
+
+```ecmascript 6
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ECMAScript 6</title>
+</head>
+<body>
+    <script>
+        var frutas = ["abacaxi", "maça", "uva"];
+        for(var i = 0; i < frutas.length ; i++){
+            console.log(frutas[i]);
+        }
+    </script>
+</body>
+</html>
+```
+
+O maior problema com esta abordagem é que é impossível saber qual o objetivo do corpo da iteração sem ver sua implementação.
+
+
+
 
 
 [Voltar ao Índice](#indice)
