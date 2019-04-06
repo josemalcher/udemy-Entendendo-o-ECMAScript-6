@@ -195,6 +195,44 @@ O map executa a função de callback recebida por parâmetro para cada elemento 
 
 #### 4. filter
 
+Como o próprio nome já pode induzir, este método é deve ser utilizado quando temos a necessidade de filtrar nossa lista de acordo com algum critério.
+
+```ecmascript 6
+var alunos = [
+    {nome:'José', idade:15},
+    {nome:'Maria', idade:3},
+    {nome:'luciana', idade:44},
+    {nome:'lucimara', idade:22}
+];
+
+var alunosDeMaior = [];
+for(var i = 0; i < alunos.length; i++){
+    var aluno = alunos[i];
+    if(aluno.idade >= 18){
+        alunosDeMaior.push(aluno);
+    }
+}
+console.log(alunosDeMaior);
+```
+
+A função de callback recebe como parâmetro cada um dos alunos da lista em cada iteração — assim como aconteceu nas outras funções auxiliares que vimos — e o atribui na variável aluno .
+
+Dentro da função, utilizamos um critério de avaliação para devolver um valor booleano para o filter : true ou false . Se for retornado verdadeiro, o valor é inserido no novo Array retornado; caso contrário, é simplesmente ignorado e não é incluído.
+
+```ecmascript 6
+var alunos = [
+    {nome:'José', idade:15},
+    {nome:'Maria', idade:3},
+    {nome:'luciana', idade:44},
+    {nome:'lucimara', idade:22}
+];
+
+var alunosDeMaior = alunos.filter(function (aluno) {
+    return aluno.idade < 18;
+});
+console.log(alunosDeMaior);
+```
+
 #### 5. find
 
 #### 6. every
