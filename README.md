@@ -276,6 +276,51 @@ console.log(alunoProducado);
 
 #### 6. every
 
+Esta é uma função auxiliar bem interessante. Ao contrário das outras que vimos até então, esta não retorna uma cópia do Array, mas sim um valor booleano.
+
+```javascript
+var jogos = [
+    {nome: 'jogo 1', categoria: 'ação'},
+    {nome: 'jogo 2', categoria: 'corrida'},
+    {nome: 'jogo 3', categoria: 'corrida'},
+    {nome: 'jogo 4', categoria: 'corrida'},
+    {nome: 'jogo 5', categoria: 'corrida'},
+    {nome: 'jogo 6', categoria: 'corrida'}
+];
+
+// como se são todos jogos de corrida
+var todosJogosDeCOrrida  = true;
+for(var i = 0 ; i < jogos.length ; i++){
+    var jogo = jogos[i];
+    if(jogo.categoria !== 'corrida'){
+        todosJogosDeCOrrida = false;
+        break;
+    }
+}
+console.log(todosJogosDeCOrrida);
+```
+
+```ecmascript 6
+var jogos = [
+    {nome: 'jogo 1', categoria: 'ação'},
+    {nome: 'jogo 2', categoria: 'corrida'},
+    {nome: 'jogo 3', categoria: 'corrida'},
+    {nome: 'jogo 4', categoria: 'corrida'},
+    {nome: 'jogo 5', categoria: 'corrida'},
+    {nome: 'jogo 6', categoria: 'corrida'}
+];
+
+// como se são todos jogos de corrida
+
+var todosJogosCorrida = jogos.every(function (jogo) {
+    return jogo.categoria === 'corrida';
+});
+
+console.log(todosJogosCorrida);
+
+```
+
+
 #### 7. some
 
 #### 8. reduce - parte 1
