@@ -323,6 +323,52 @@ console.log(todosJogosCorrida);
 
 #### 7. some
 
+Se a tarefa é validar se, pelo menos, um dos elementos de um Array satisfaz uma dada condição, o some é o método perfeito para o trabalho.
+
+```javascript
+var jogos = [
+    {nome: 'jogo 1', categoria: 'ação'},
+    {nome: 'jogo 2', categoria: 'plataforma'},
+    {nome: 'jogo 3', categoria: 'tipo 1'},
+    {nome: 'jogo 4', categoria: 'aventura'},
+    {nome: 'jogo 5', categoria: 'shooter'},
+    {nome: 'jogo 6', categoria: 'corrida'}
+];
+
+// como se há pelo menos um jogo de corrida?
+var temJogoDeCorrida = false;
+for(var i = 0 ; i < jogos.length ; i++){
+    var jogo = jogos[i];
+    if(jogo.categoria === 'corrida'){
+        temJogoDeCorrida = true;
+        break;
+    }
+}
+
+console.log("Tem jogo de corrida? R: ", temJogoDeCorrida);
+
+```
+
+```ecmascript 6
+var jogos = [
+    {nome: 'jogo 1', categoria: 'ação'},
+    {nome: 'jogo 2', categoria: 'plataforma'},
+    {nome: 'jogo 3', categoria: 'tipo 1'},
+    {nome: 'jogo 4', categoria: 'aventura'},
+    {nome: 'jogo 5', categoria: 'shooter'},
+    {nome: 'jogo 6', categoria: 'corrida'}
+];
+
+// como se há pelo menos um jogo de corrida?
+
+var temJogoDeCorrida = jogos.some(function (jogo) {
+    return jogo.categoria === 'corrida';
+});
+
+console.log("Tem jogo de corrida? R: ", temJogoDeCorrida);
+
+```
+
 #### 8. reduce - parte 1
 
 #### 9. reduce - parte 2
