@@ -371,7 +371,47 @@ console.log("Tem jogo de corrida? R: ", temJogoDeCorrida);
 
 #### 8. reduce - parte 1
 
+A ideia por trás dela é pegar todos os valores de um Array e condensá-los em um único.
+
+```javascript
+var numeros = [10,10,10,20];
+
+// como faço para obter a doma de todos os numeros?
+
+var soma = 0;
+for(var  i = 0 ; i < numeros.length ; i++){
+    soma += numeros[i];
+}
+console.log(soma); 
+```
+
+```ecmascript 6
+var numeros = [10,10,10,20];
+
+// como faço para obter a doma de todos os numeros?
+
+var soma = numeros.reduce(function (somaAux, numero) {
+    return somaAux + numero;
+}, 0 ); // 0 -> valor inicial de somaAux
+
+console.log(soma);
+```
+
 #### 9. reduce - parte 2
+
+```ecmascript 6
+var alunos = [
+    {nome:'joão', idade: 10},
+    {nome:'josé', idade: 20},
+    {nome:'marcos', idade: 30}
+];
+
+var nomes = alunos.reduce(function (arrayNomes, aluno) {
+    arrayNomes.push(aluno.nome);
+    return arrayNomes;
+},[]);
+console.log(nomes);
+```
 
 #### 10. Conclusão
 
