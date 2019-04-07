@@ -488,6 +488,32 @@ Por natureza, iteradores são Lazy. Isso significa que ele não sabe de antemão
 ## <a name="parte5">For...of</a>
 
 
+#### 1. Iteração com o laço for...of
+
+Neste capítulo vimos como funciona um novo tipo de laço de repetição: o laço for...of.  Este tipo de laço foi criado para percorrer um objeto se, e somente se, ele for iterável. Seu funcionamento é bem simples. Sua sintaxe é:
+
+```javascript
+for (variavel of iteravel) {
+  // corpo
+}
+```
+
+A variavel representa uma variável de auxílio que assume valores diferentes a cada iteração, e o iteravel é o objeto que será iterado. O caso de uso mais recorrente deste tipo de laço é para passar por todos os valores contidos em um Array, Set ou um Map. 
+
+Sua utilização é muito simples.
+
+
+
+#### 2. A diferença entre o For...in e o For...of
+
+
+#### 3. break e continue
+
+
+#### 4. Voltando ao Chapéu Seletor
+
+
+
 [Voltar ao Índice](#indice)
 
 ---
