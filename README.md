@@ -506,6 +506,17 @@ Sua utilização é muito simples.
 
 #### 2. A diferença entre o For...in e o For...of
 
+```ecmascript 6
+var carro = {
+    modelo: 'fiat',
+    ano: 2000
+};
+
+for(var propriedade in carro){
+    var info = carro[propriedade];
+    console.log(info);
+}
+```
 
 #### 3. break e continue
 
