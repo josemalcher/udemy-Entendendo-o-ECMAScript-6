@@ -425,6 +425,36 @@ console.log(nomes);
 
 ## <a name="parte4">Iteradores e Iteráveis</a>
 
+#### 1. O conceito de iteração
+
+A iteração é definida por dois conceitos centrais: iteradores e iteráveis. Um iterável está ligado com um iterador que define como ele será percorrido. O seu objetivo é prover uma forma de sequencialmente acessar os elementos de um iterável sem expor sua representação interna, retirando a responsabilidade dele de saber como acessar e caminhar sobre sua estrutura.
+
+#### 2. Iteradores
+
+![](img/4-2-iterador.png)
+
+#### 3. Iteráveis
+
+```ecmascript 6
+// alguns objetos no JavaScript já são iteraveis por padrão
+// arrays
+// string
+// maps e sets
+
+// basta a gente obter o seu iterador...
+var pessoas = ['jose', 'maria', 'ronny', 'mateus', 'jorge'];
+var interadorPessoas = pessoas[Symbol.iterator]();
+console.log(interadorPessoas.next());
+console.log(interadorPessoas.next());
+console.log(interadorPessoas.next());
+console.log(interadorPessoas.next());
+console.log(interadorPessoas.next());
+console.log(interadorPessoas.next());
+console.log(interadorPessoas.next());
+```
+
+#### 4. Iteradores e Iteráveis Exemplo prático
+
 
 [Voltar ao Índice](#indice)
 
