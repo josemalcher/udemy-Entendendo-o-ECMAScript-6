@@ -573,6 +573,98 @@ for(var pessoa of pessoas){
 
 ## <a name="parte6">Novas estruturas de dados</a>
 
+#### 1. Introdução
+
+Com a chegada do ES6, o JavaScript introduz duas novas estruturas de dados: Map e WeakMap. Essas estruturas, ao contrário da tradicional concepção de que todos objetos são mapas, são implementações reais de mapas como estrutura de dados, assim como já estamos acostumados a ver em outras linguagens. Estas novas estruturas nos permitem:
+
+- Adicionar elementos pelo par (chave, valor);
+- Remover elementos pela chave;
+- Acessar elementos dada uma chave;
+- Pesquisar elementos, descobrindo se ele pertece ou não a coleção por meio da chave;
+- Indagar sobre atributos, como o número de elementos, por exemplo.
+- Etc
+
+#### 2. Introdução aos Mapas
+
+Em um Map do JavaScript, qualquer valor (tanto objetos, funções ou valores primitivos) podem ser usados como chave ou valor. Os principais métodos e propriedades são: set, get, size, has, delete, clear.
+
+- Adicionar elementos pelo par(chave valor)
+- Remover elementos pela chave;
+- Acessar elementos dada uma chave
+- Pesquisar elementos, descobrindo se ele pertence ou não a coleção por meio da chave;
+- indagar sobre atributos, como o numero de elementos, por exemplo.
+
+#### 3. Map
+
+```javascript
+// map
+var map = new Map();
+function funcao(){};
+var objeto = {};
+
+map.set("String", "Sou uma String");
+map.set("String2", "Sou uma String");
+map.set("String3", "Sou uma String");
+map.set(objeto, "Sou um objeto");
+map.set(funcao, "Sou uma função");
+
+// GET
+
+console.log(map.get("String"));
+console.log(map.get(objeto));
+console.log(map.get(funcao));
+/* 
+Sou uma String
+Sou um objeto
+Sou uma função 
+*/
+
+console.log("Tamanho = "+map.size); 
+
+// HAS
+console.log(map.has("String")); // true
+console.log(map.has("String99")); // false
+
+// DELETE
+map.delete("String");
+console.log(map.has("String")); // false
+
+// CLEAR - remove todos os elementos do map
+console.log(map.size); // 4 elementos
+//map.clear();
+console.log(map.size); // 0 elementos
+
+console.log("---------------------------")
+/* E como vimos nos capítulos anteriores, o Map é um objeto iterável. 
+Sendo assim, podemos utilizar o laço for...of para iterá-los através 
+dos métodos: keys, values e entries. 
+Eles retornam todas as chaves, todos os valores e todas as 
+entradas (par chave/valor), respectivamente. */
+for (var chave of map.keys()){
+    console.log(chave);
+}
+
+for(var valor of map.values()){
+    console.log(valor);
+}
+
+for(var entrada of map.entries()){
+    console.log(entrada);
+}
+```
+
+
+#### 4. Administrando uma biblioteca
+
+#### 5. WeakMap
+
+#### 6. Onde usar WeakMaps
+
+#### 8. Introdução aos Sets e Weaksets
+
+#### 9. Sets
+
+#### 10. WeakSets
 
 [Voltar ao Índice](#indice)
 
