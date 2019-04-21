@@ -684,6 +684,31 @@ console.log(localizacao);
 
 #### 5. WeakMap
 
+Um WeakMap é uma coleção de pares de chave/valor na qual as chaves só podem ser objetos. As referências do objetos nas chaves são fracamente mantidas. Isso significa que eles não estão previnidos de serem coletados pelo Garbage Collector caso não existir nenhuma outra referência para o objeto em memória. Como toda chave do WeakMap necessariamente precisa ser um objeto, se tentamos utilizar qualquer outro tipo de valor no lugar, tomamos um erro. Além disso, dos métodos que vimos em Map, somente temos quatro deles disponíveis aqui: delete, has, get e set. Não temos como limpar todos os dados de uma vez (método clear) e nem ter uma visão geral do conteúdo do WeakMap (método entries) por causa da natureza fraca das ligações.
+
+```javascript
+// WeajMaps são "Fraquinhos"
+
+var weakMap = new WeakMap();
+var elemento1 = {atr:1};
+var elemento2 = {atr:2};
+
+weakMap.set(elemento1, 'Sou o elemento 1');
+weakMap.set(elemento2, 'Sou o Elemento 2');
+
+console.log(weakMap.get(elemento1));
+console.log(weakMap.get(elemento2));
+
+elemento2 = null;
+
+setTimeout(function(){
+	console.log(weakMap.get(elemento2));
+},3000);
+
+```
+
+
+
 #### 6. Onde usar WeakMaps
 
 #### 8. Introdução aos Sets e Weaksets
