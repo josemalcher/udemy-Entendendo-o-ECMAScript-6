@@ -737,6 +737,35 @@ console.log(roberto._nome); // undefined
 
 #### 8. Introdução aos Sets e Weaksets
 
+Às vezes, necessitamos tratar coleções de itens únicos, ou seja, itens que não repetem. Estes itens podem ser qualquer coisa: números, strings, objetos ou mesmo funções. Na prática, isso significa que precisamos criar listas em que só podemos adicionar um item específico uma única vez. Se tentarmos adicioná-lo mais de uma vez, ela deve ser inteligente o suficiente para saber que aquele item já está lá e não o adicionar novamente.
+
+Usando ES5
+
+```javascript
+function Set(){
+    var array = [];
+    this.add = function(valor){
+        if(array.indexOf(valor)=== -1){
+            array.push(valor);
+        }
+    },
+    this.mostravalores = function(){
+        console.log(array);
+    }
+}
+
+var set = new Set();
+set.add(2);
+set.add(4);
+set.add(6);
+set.add(2);
+set.add(2);
+
+set.mostravalores();
+
+// [ 2, 4, 6 ]
+```
+
 #### 9. Sets
 
 #### 10. WeakSets
